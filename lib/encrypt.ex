@@ -4,15 +4,11 @@ defmodule Encrypt do
   """
 
   @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Encrypt.hello()
-      :world
-
+  `generate_secret`
+  Generates a random base64 encoded secret key.
   """
-  def hello do
-    :world
+  def generate_secret do
+    :crypto.strong_rand_bytes(16)
+    |> :base64.encode()
   end
 end
